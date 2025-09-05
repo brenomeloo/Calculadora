@@ -7,7 +7,8 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #36193f;
+    background: #001f24;
+    background: linear-gradient(45deg, rgba(0, 31, 36, 1) 1%, rgba(82, 9, 121, 1) 51%, rgba(255, 0, 55, 1) 90%);
 }
 
 h1{
@@ -15,12 +16,15 @@ h1{
 }
 
 .calculadora {
-    background-color: rgb(37, 35, 35);
+    background: rgba(37, 35, 35, 0.7); /* Transparência para efeito vidro */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Sombra suave */
+    backdrop-filter: blur(8px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(8px); /* Suporte para Safari */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     width: 300px;
-    border-radius: 8px;
     padding: 20px;
-    border-color: rgb(0, 0, 0);
-    border-style: double;
+    margin-top: 20px;
 }
 
 #display{
@@ -36,6 +40,24 @@ h1{
     color: rgb(0, 0, 0);
 }
 
+.display-container {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.display-history {
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+    min-height: 18px;
+    padding-right: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 .box-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -46,13 +68,86 @@ h1{
 button {
     border: none;
     border-radius: 8px;
-    width: 45px;
-    height: 45px;
     font-size: 20px;
+    height: 45px;
+    width: 45px;
+    background: rgba(255, 255, 255, 0.15); /* Transparente para efeito vidro */
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15); /* Sombra suave */
+    backdrop-filter: blur(4px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
 }
 
 button:hover {
-    background-color: rgb(176, 171, 171);
+    background: rgba(255, 255, 255, 0.25);
+    color: #222;
     cursor: pointer;
-    transition: .5s;
+    transition: .3s;
+}
+
+
+.btn-0{
+    grid-column: 1 / 3;
+    width: 85%;
+}
+
+.btn-resultado{
+    grid-row:  4 / 6;
+    height: 100%;
+    grid-column: 4;
+    background: rgba(183, 58, 4, 0.7);
+    color: #fff;
+}
+
+.btn-C{
+    background: rgba(183, 58, 4, 0.7);
+    color: #fff;
+}
+
+
+@media (max-width: 700px) {
+    .calculadora {
+        width: 80vw;
+        padding: 10px;
+        height: 45vw;
+    }
+
+    #display {
+        font-size: 18px;
+        height: 45px;
+    }
+
+    .box-buttons {
+        gap: 4px;
+    }
+
+    button, .btn-0 {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .btn-0 {
+        width: 80%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .calculadora {
+        padding: 4px;
+    }
+    button, .btn-0 {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    #display {
+        font-size: 14px;
+        height: 32px;
+    }
 }
