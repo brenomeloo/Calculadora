@@ -16,10 +16,10 @@ h1{
 }
 
 .calculadora {
-    background: rgba(37, 35, 35, 0.7); /* Transparência para efeito vidro */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Sombra suave */
-    backdrop-filter: blur(8px); /* Efeito de desfoque */
-    -webkit-backdrop-filter: blur(8px); /* Suporte para Safari */
+    background: rgba(37, 35, 35, 0.7); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     width: 300px;
@@ -71,9 +71,9 @@ button {
     font-size: 20px;
     height: 45px;
     width: 45px;
-    background: rgba(255, 255, 255, 0.15); /* Transparente para efeito vidro */
-    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15); /* Sombra suave */
-    backdrop-filter: blur(4px); /* Efeito de desfoque */
+    background: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15); 
+    backdrop-filter: blur(4px); 
     -webkit-backdrop-filter: blur(4px);
     color: #fff;
     transition: background 0.3s, color 0.3s;
@@ -108,14 +108,18 @@ button:hover {
 
 @media (max-width: 700px) {
     .calculadora {
-        width: 80vw;
+        width: 200px;
         padding: 10px;
-        height: 45vw;
+        justify-items: center;
+       
     }
 
     #display {
         font-size: 18px;
-        height: 45px;
+        height: 40px;
+        width: 70%;
+        margin-bottom: 0px;
+        align-self: center;
     }
 
     .box-buttons {
@@ -139,6 +143,7 @@ button:hover {
 
 @media (max-width: 350px) {
     .calculadora {
+        width: 150px;
         padding: 4px;
     }
     button, .btn-0 {
